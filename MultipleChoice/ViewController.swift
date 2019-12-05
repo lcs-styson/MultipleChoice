@@ -30,9 +30,19 @@ class ViewController: UIViewController {
             studentsResults.text = "PLease enter a valid amount of questions"
             return
         }
+        // Guard statements making sure there are answers in the input
+        guard let studentAnswers = studentAnswer.text,
+            studentAnswers.count > 0 else {
+            studentsResults.text = "Please enter the students answers"
+        return
+        }
         
-        
-        
+        guard let correctAnswers = correctAnswers.text,
+            correctAnswers.count > 0 else {
+            studentsResults.text = "Please enter the correct answers"
+            return
+        }
+    
     }
     
     
